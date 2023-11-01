@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 class details_page extends StatefulWidget {
   const details_page({super.key});
@@ -29,48 +33,55 @@ class _details_pageState extends State<details_page> {
         child: Column(
           children: [
             ...data['Quotes'].map(
-              (e) => Container(
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.all(10),
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      "${e['img']}",
+              (e) => GestureDetector(
+                onTap: () {
+                  setState(() {
+                    Navigator.of(context).pushNamed('detaills', arguments: e);
+                  });
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        "${e['img']}",
+                      ),
+                    ),
+                    color: Colors.white,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(20),
                     ),
                   ),
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Center(
-                        child: Text(
-                          maxLines: 3,
-                          "${e['quote']}",
-                          style: const TextStyle(
-                            fontSize: 22,
-                            color: Colors.black,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Center(
+                          child: Text(
+                            maxLines: 4,
+                            "${e['quote']}",
+                            style: const TextStyle(
+                              fontSize: 22,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Center(
-                        child: Text(
-                          "${e['author']}",
-                          style: const TextStyle(
-                            fontSize: 22,
-                            color: Colors.black,
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Center(
+                          child: Text(
+                            "${e['author']}",
+                            style: const TextStyle(
+                              fontSize: 22,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
