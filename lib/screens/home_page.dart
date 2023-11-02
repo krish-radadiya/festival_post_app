@@ -44,7 +44,7 @@ class _homepageState extends State<homepage> {
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    Navigator.of(context).pushNamed('details', arguments: e);
+                    Navigator.of(context).pushNamed('quote', arguments: e);
                   });
                 },
                 child: Container(
@@ -56,7 +56,7 @@ class _homepageState extends State<homepage> {
                     borderRadius: BorderRadius.circular(25),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                        image: AssetImage("${e['thumbnail']}"),
+                      image: AssetImage("${e['thumbnail']}"),
                     ),
                   ),
                   child: Text(

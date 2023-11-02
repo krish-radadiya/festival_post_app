@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
-class details_page extends StatefulWidget {
-  const details_page({super.key});
+class quotes_page extends StatefulWidget {
+  const quotes_page({super.key});
 
   @override
-  State<details_page> createState() => _details_pageState();
+  State<quotes_page> createState() => _details_pageState();
 }
 
-class _details_pageState extends State<details_page> {
+class _details_pageState extends State<quotes_page> {
   @override
   Widget build(BuildContext context) {
     Map<String, dynamic> data =
