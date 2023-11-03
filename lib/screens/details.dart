@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_extend/share_extend.dart';
 
@@ -45,6 +46,19 @@ void ShareImage() async {
   print("${image}");
 }
 
+void saveImg() async {
+  RenderRepaintBoundary res = await repaintboudry.currentContext!
+      .findRenderObject() as RenderRepaintBoundary;
+
+  var image = await res.toImage(pixelRatio: 5);
+
+  ByteData? byte = await image.toByteData(format: ImageByteFormat.png);
+
+  Uint8List ulist = await byte!.buffer.asUint8List();
+
+  await ImageGallerySaver.saveImage(ulist);
+}
+
 class _detailssState extends State<detailss> {
   @override
   Widget build(BuildContext context) {
@@ -60,6 +74,15 @@ class _detailssState extends State<detailss> {
             },
             icon: const Icon(
               Icons.share,
+              color: Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              saveImg();
+            },
+            icon: const Icon(
+              Icons.save,
               color: Colors.black,
             ),
           ),

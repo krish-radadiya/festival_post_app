@@ -1,9 +1,11 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
+import '../Model/model.dart';
 import '../utils/quots/quotas.dart';
 
 class homepage extends StatefulWidget {
@@ -12,6 +14,8 @@ class homepage extends StatefulWidget {
   @override
   State<homepage> createState() => _homepageState();
 }
+
+Random random = Random();
 
 class _homepageState extends State<homepage> {
   @override
@@ -30,7 +34,7 @@ class _homepageState extends State<homepage> {
         centerTitle: true,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
             image: NetworkImage(

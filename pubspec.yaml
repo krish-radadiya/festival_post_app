@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^6.1.0
   path_provider:
   share_extend:
+  image_gallery_saver: ^2.0.3
+
 
 dev_dependencies:
   flutter_test:
