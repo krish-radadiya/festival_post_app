@@ -5,9 +5,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_extend/share_extend.dart';
+
+import '../utils/quots/global.dart';
 
 class detailss extends StatefulWidget {
   const detailss({super.key});
@@ -88,51 +91,209 @@ class _detailssState extends State<detailss> {
           ),
         ],
       ),
-      body: RepaintBoundary(
-        key: repaintboudry,
-        child: Container(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  height: 250,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage("${data['img']}"),
-                    ),
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        "${data['quote']}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "${data['author']}",
-                        style: const TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              height: 300,
+              width: 350,
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: global.bgColor,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                    global.bgImage,
                   ),
                 ),
+                borderRadius: BorderRadius.circular(10),
               ),
-            ],
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  Text(
+                    "${data['quote']}",
+                    style: GoogleFonts.getFont(
+                      global.fontFamily,
+                    ).copyWith(
+                      fontSize: 18,
+                      color: global.fontColor,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    " - ${data['author']}",
+                    style: GoogleFonts.getFont(
+                      global.fontFamily,
+                    ).copyWith(
+                      fontSize: 18,
+                      color: global.fontColor,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
+          Expanded(
+            flex: 1,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  const Text(
+                    "Background color",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                        children: global.bgcolor
+                            .map(
+                              (e) => GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    global.bgColor = e;
+                                  });
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.all(15),
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    color: e,
+                                    border: Border.all(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                            .toList()),
+                  ),
+                  const Text(
+                    "Font color",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: global.bgcolor
+                          .map(
+                            (e) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  global.fontColor = e;
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(15),
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: e,
+                                  border: Border.all(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  const Text(
+                    "Font style",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: global.font
+                          .map(
+                            (e) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  global.fontFamily = e;
+                                });
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.all(15),
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                child: Text(
+                                  "A a",
+                                  style: GoogleFonts.getFont(e).copyWith(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  const Text(
+                    "Background image ",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: global.image
+                          .map(
+                            (e) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  global.image = e as List<String>;
+                                  // global.bgImage = e;
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(15),
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                      "${e}",
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
