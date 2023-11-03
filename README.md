@@ -1,16 +1,7 @@
-# festival_post_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![8e8226ab-9fab-43a2-8fb3-a84178def72d](https://github.com/krish-radadiya/festival_post_app/assets/113992828/5e833340-a7d5-4468-9577-c3b62d678ddd)
+![fe02cb0c-c76e-4800-abb0-d7cc50ed2bfd](https://github.com/krish-radadiya/festival_post_app/assets/113992828/97c44310-028a-4552-9b54-2bf12ee1ac2b)
+![1b1a8d40-6d37-4003-9b4e-4f5fd60b78f1](https://github.com/krish-radadiya/festival_post_app/assets/113992828/88986685-84f4-4441-9b5a-6517709a388f)
+![c0e43d38-7867-42a4-a461-ca44ee1dab60](https://github.com/krish-radadiya/festival_post_app/assets/113992828/284fcfae-67e1-40d1-a3dd-afbab76a33cd)
+![b9696f24-1a90-45b7-b8ad-82609df81d34](https://github.com/krish-radadiya/festival_post_app/assets/113992828/c49e439a-823e-431a-a80b-ecf1240564dc)
+![80fdd587-b40d-4bc9-a0d5-6b443d707405](https://github.com/krish-radadiya/festival_post_app/assets/113992828/9bb11296-7f30-4a87-9e65-e014a2f6a6e0)
+![364559f9-d932-4555-b68f-a771708f41f1](https://github.com/krish-radadiya/festival_post_app/assets/113992828/74938131-e915-4069-b8b3-42a6494359f2)
