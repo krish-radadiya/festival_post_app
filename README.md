@@ -5,3 +5,4 @@
 ![b9696f24-1a90-45b7-b8ad-82609df81d34](https://github.com/krish-radadiya/festival_post_app/assets/113992828/c49e439a-823e-431a-a80b-ecf1240564dc)
 ![80fdd587-b40d-4bc9-a0d5-6b443d707405](https://github.com/krish-radadiya/festival_post_app/assets/113992828/9bb11296-7f30-4a87-9e65-e014a2f6a6e0)
 ![364559f9-d932-4555-b68f-a771708f41f1](https://github.com/krish-radadiya/festival_post_app/assets/113992828/74938131-e915-4069-b8b3-42a6494359f2)
+![Diwali](https://github.com/krish-radadiya/festival_post_app/assets/113992828/94fb452d-f1b0-479e-8616-123cf8e60a49)
